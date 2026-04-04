@@ -1,66 +1,52 @@
-import { useEffect, useState } from "react";
 import "./dashboard.css";
+import Footer from "../components/Footer"; 
 
 export default function Dashboard() {
 
-  
-  const heroImages = [
-    "https://plus.unsplash.com/premium_photo-1693160056946-13a9dc611327?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1739138053507-0f312a938451?q=80&w=1186&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  ];
- 
-  const [currentImage, setCurrentImage] = useState(0);
+  const hombreImg = "https://plus.unsplash.com/premium_photo-1669688174622-0393f5c6baa2?q=80&w=764";
+  const damaImg = "https://images.unsplash.com/photo-1675685828170-fe4b100acd24?q=80&w=687";
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage(prev => (prev + 1) % heroImages.length);
-    }, 5000); 
-
-    return () => clearInterval(interval);
-  }, []);
-
-
-
-  const gallery = [
-    {
-      url: "https://images.unsplash.com/photo-1725830063343-a9b87b6d1858?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      type: "vertical"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1731132198530-e4b2dc51d511?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      type: "horizontal"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1731132198530-e4b2dc51d511?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      type: "vertical"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1771781732253-024b56528913?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      type: "horizontal"
-    }
+  const coleccion = [
+    "https://images.unsplash.com/photo-1626379616459-b2ce1d9decbc?q=80&w=687",
+    "https://images.unsplash.com/photo-1551111293-20c9c0ae923c?q=80&w=1176",
+    "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?q=80&w=735"
   ];
 
   return (
     <div className="dashboard">
 
+    
+      <div className="split-hero">
 
-      <div
-        className="hero"
-        style={{
-          backgroundImage: `url(${heroImages[currentImage]})`
-        }}
-      >
-        <h1>Mi Dashboard</h1>
+        <div
+          className="side hombre"
+          style={{ backgroundImage: `url(${hombreImg})` }}
+        >
+          <h2>Hombre</h2>
+        </div>
+
+        <div
+          className="side dama"
+          style={{ backgroundImage: `url(${damaImg})` }}
+        >
+          <h2>Dama</h2>
+        </div>
+
       </div>
+      
+      <div className="collection">
+        <h2>Nueva colección primavera</h2>
 
-      <div className="gallery">
-        {gallery.map((img, index) => (
-          <div key={index} className={`card ${img.type}`}>
-            <img src={img.url} alt="img" />
-          </div>
-        ))}
+        <div className="collection-grid">
+          {coleccion.map((img, index) => (
+            <div key={index} className="collection-card">
+              <img src={img} alt="colección" />
+            </div>
+          ))}
+        </div>
       </div>
 
     </div>
+    
   );
 }

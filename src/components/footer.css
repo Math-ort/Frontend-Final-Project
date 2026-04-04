@@ -1,0 +1,89 @@
+.footer {
+  background: #f5f5f5;
+  color: #111;
+  width: 100%;
+  padding: 40px 20px;
+  }
+  
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  
+  .footer-col h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-col li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .footer-col li:hover {
+    text-decoration: underline;
+  }
+  
+
+  .newsletter input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .newsletter button {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .newsletter button:hover {
+    background: #ddd;
+  }
+  
+  .small-text {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  
+
+  .footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 13px;
+  }
+  
+  .footer-bottom .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .footer-bottom span {
+    cursor: pointer;
+  }
+  
+  .footer-bottom span:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+    }
+  }

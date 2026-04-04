@@ -7,6 +7,7 @@ import  CreateProduct  from "../pages/CreateProduct"
 import  Home from "../pages/Home"
 import { ProductContext } from "../context/ProductContext";
 import Dashboard from "../components/Dashboard";
+import Footer from "../components/Footer";
 import Cart from "../pages/Cart";
 import { useState } from "react";
 function RouterApp() {
@@ -36,6 +37,7 @@ function RouterApp() {
 
         <Route path="/*" element={<Navigate to="/"/>} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

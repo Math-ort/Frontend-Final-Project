@@ -11,7 +11,7 @@ function CreateProduct() {
       formData.append("descripcion", product.descripcion);
       formData.append("categoria", product.categoria);
       formData.append("talla", product.talla);
-      formData.append("imagen", product.imagen);
+      formData.append("image", product.imagen);
 
       await createProduct(formData);
       console.log("Producto creado");
@@ -19,7 +19,6 @@ function CreateProduct() {
       console.error(error);
     }
   };
-
   return (
     <div>
       <h1>Crear producto</h1>

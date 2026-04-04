@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-const validCategorias = ['Camisetas', 'Pantalones', 'Zapatos', 'Accesorios']; 
+const validCategorias = ["ropa", "zapatillas", "accesorios"];
 const validTallas = ['XS', 'S', 'M', 'L', 'XL'];  
 
 const productsSchema = new mongoose.Schema({

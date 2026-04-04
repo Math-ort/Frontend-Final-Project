@@ -41,24 +41,6 @@ getAllProducts: async (req, res) => {
     }
   },
 
-  // POST
-  
-  //createProduct: async (req, res) => {
-  //  try {
-  //    const newProduct = await Product.create(req.body);
-  //   
-  //    res.status(201).json({
-  //      ok: true,
-  //      data: newProduct
-  //    });
-//
-  //  } catch (error) {
-  //    res.status(400).json({
-  //      ok: false,
-  //      message: "Error creating product"
-  //    });
-  //  }
-  //},
   createProduct: async (req, res) => {
     try {
       const { nombre, precio, descripcion, categoria, talla, imagen } = req.body;
