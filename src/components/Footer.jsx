@@ -7,7 +7,7 @@ export default function Footer() {
 
         <div className="footer-col">
           <h4>Atención al cliente</h4>
-          <p>(+34) 919 01 59 36</p>
+          <p>(+34) 000 01 02 03</p>
           <ul>
             <li>Servicio al cliente</li>
             <li>Guía de tallas</li>
@@ -17,7 +17,6 @@ export default function Footer() {
             <li>Estado del pedido</li>
             <li>Envío</li>
             <li>Pago</li>
-            <li>Acerca de Nosotros</li>
           </ul>
         </div>
 
@@ -25,10 +24,8 @@ export default function Footer() {
           <h4>Empresa</h4>
           <ul>
             <li>Nuestra historia</li>
-            <li>Oportunidades profesionales</li>
             <li>Responsabilidad corporativa</li>
-            <li>Prensa</li>
-            <li>Accesibilidad: No conforme</li>
+            <li>Trabaja con nosotros</li>
           </ul>
         </div>
 

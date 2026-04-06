@@ -128,7 +128,6 @@ summary {
 main,
 header,
 footer,
-nav,
 section,
 article,
 aside {
@@ -145,8 +144,6 @@ aside {
 body {
   background: #ffffff;
   color: #111;
-  padding: 40px;
-  padding-top: 70px;
   margin: auto;
 }
 
@@ -221,7 +218,7 @@ form label {
 
 form input {
   width: 100%;
-  padding: 8px 0;
+  margin-left: 20px; 
   border: none;
   border-bottom: 1px solid #ccc;
   font-size: 14px;
@@ -290,85 +287,6 @@ form input:focus {
 
 .back-link a:hover {
   color: #111;
-}
-nav.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  background: black;
-  color: white;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 0 40px;
-  z-index: 1000;
-}
-
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-nav a:hover {
-  opacity: 0.7;
-}
-
-.search {
-  display: flex;
-  align-items: center;
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  height: 25px;           
-}
-
-.search input {
-  border: none;
-  padding: 4px 8px;       
-  outline: none;
-  width: 250px;           
-  font-size: 12px;
-}
-
-.search button {
-  background: transparent;
-  border: none;
-  padding: 4px;
-  cursor: pointer;
-}
-
-.search-icon {
-  width: 14px;
-  height: 14px;
 }
 
 .products-container {

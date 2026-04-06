@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Admin from "../pages/Admin";
 import Nav from "../pages/Nav"
 import SearchResults from "../search/SearchResult";
 import { useContext } from "react";
@@ -10,6 +9,10 @@ import Dashboard from "../components/Dashboard";
 import Footer from "../components/Footer";
 import Cart from "../pages/Cart";
 import { useState } from "react";
+import DashboardAdmin from "./DashboardAdmin";
+import Login from "./Login";
+import Signup from "./Signup";
+import ProtectedRoute from "./ProtectedRoute";
 function RouterApp() {
  const { products } = useContext(ProductContext);
  const [cart, setCart]= useState([]);
@@ -18,7 +21,10 @@ function RouterApp() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home cart={cart}setCart={setCart} />} />
+        <Route element={<ProtectedRoute />}>
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/auth/dashboaradmin" element={<DashboardAdmin />} />
+        </Route>
         <Route path="/hombre" element={<h1>Hombre</h1>} />
         <Route path="/mujer" element={<h1>Mujer</h1>} />
         <Route path="/categoria/accesorios" element={<h1>Accesorios</h1>} />
@@ -28,12 +34,13 @@ function RouterApp() {
         <Route path="/cart" element={<Cart cart={cart}setCart={setCart}/>} />
         <Route path="/products/create" element={<CreateProduct />} />
         <Route path="/search/:query" element={<SearchResults />} />
-        <Route path="/login" element={<h1>Login</h1>} />
+
 
         {/* rutas protegidas */}
-        <Route path="/auth/admin" element={<Admin />} />
-        <Route path="/logout" element={<h1>Logout</h1>} />
 
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup  />} />
+        <Route path="/auth/dashboaradmin" element={<DashboardAdmin />} />
 
         <Route path="/*" element={<Navigate to="/"/>} />
       </Routes>
@@ -41,5 +48,8 @@ function RouterApp() {
     </Router>
   );
 }
+
+
+
 
 export default RouterApp;

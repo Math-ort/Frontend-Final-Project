@@ -1,5 +1,4 @@
 import "./dashboard.css";
-import Footer from "../components/Footer"; 
 
 export default function Dashboard() {
 
@@ -7,20 +6,38 @@ export default function Dashboard() {
   const damaImg = "https://images.unsplash.com/photo-1675685828170-fe4b100acd24?q=80&w=687";
 
   const coleccion = [
-    "https://images.unsplash.com/photo-1626379616459-b2ce1d9decbc?q=80&w=687",
-    "https://images.unsplash.com/photo-1551111293-20c9c0ae923c?q=80&w=1176",
-    "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?q=80&w=735"
+    {
+      img: "https://images.unsplash.com/photo-1626379616459-b2ce1d9decbc?q=80&w=687",
+      text: "Calzado Hombre",
+      link: "/calzado-hombre"
+    },
+    {
+      img: "https://images.unsplash.com/photo-1551111293-20c9c0ae923c?q=80&w=1176",
+      text: "Calzado Dama",
+      link: "/calzado-dama"
+    },
+    {
+      img: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?q=80&w=735",
+      text: "Camisetas Dama",
+      link: "/camisetas-dama"
+    },
+    {
+      img: "https://images.unsplash.com/photo-1462392246754-28dfa2df8e6b?q=80&w=1170",
+      text: "",
+      link: "/shop"
+    }
   ];
 
   return (
     <div className="dashboard">
 
-    
+      {/* HERO */}
       <div className="split-hero">
 
         <div
           className="side hombre"
           style={{ backgroundImage: `url(${hombreImg})` }}
+          onClick={() => window.location.href = "/productos-hombre"}
         >
           <h2>Hombre</h2>
         </div>
@@ -28,25 +45,49 @@ export default function Dashboard() {
         <div
           className="side dama"
           style={{ backgroundImage: `url(${damaImg})` }}
+          onClick={() => window.location.href = "/productos-dama"}
         >
           <h2>Dama</h2>
         </div>
 
       </div>
-      
       <div className="collection">
         <h2>Nueva colección primavera</h2>
 
         <div className="collection-grid">
-          {coleccion.map((img, index) => (
+          {coleccion.map((item, index) => (
             <div key={index} className="collection-card">
-              <img src={img} alt="colección" />
+              <div
+                className="image-wrapper"
+                onClick={() => window.location.href = item.link}
+              >
+                <img src={item.img} alt={item.text} />
+                {index === coleccion.length - 1 && (
+                  <button
+                    className="shop-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.location.href = "/shop";
+                    }}
+                  >
+                    Shop Now
+                  </button>
+                )}
+              </div>
+              {item.text && (
+                <p
+                  className="category-text"
+                  onClick={() => window.location.href = item.link}
+                >
+                  {item.text}
+                </p>
+              )}
+
             </div>
           ))}
         </div>
       </div>
 
     </div>
-    
   );
 }

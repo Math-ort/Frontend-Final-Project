@@ -1,7 +1,7 @@
+import "./nav.css";
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchIcon from '../components/SearchIcon';
-
 function Nav() {
   const [searchInput, setSearchInput] = useState("");
   const navigate = useNavigate();
@@ -18,18 +18,50 @@ function Nav() {
 
   return (
     <nav className="nav">
- 
+
       <div className="nav-left">
         <Link to="/" className="logo">Shop</Link>
 
         <div className="nav-links">
-          <Link to="/hombre">Hombre</Link>
-          <Link to="/mujer">Mujer</Link>
-          <Link to="/categoria/accesorios">Accesorios</Link>
+
+          {/* HOMBRE */}
+          <div className="nav-item">
+            <Link to="/hombre">Hombre</Link>
+
+            <div className="dropdown">
+              <Link to="/hombre/camisetas">Camisetas</Link>
+              <Link to="/hombre/pantalones">Pantalones</Link>
+              <Link to="/hombre/chaquetas">Chaquetas</Link>
+              <Link to="/hombre/zapatos">Zapatos</Link>
+            </div>
+          </div>
+
+          {/* MUJER */}
+          <div className="nav-item">
+            <Link to="/mujer">Mujer</Link>
+
+            <div className="dropdown">
+              <Link to="/mujer/camisetas">Camisetas</Link>
+              <Link to="/mujer/pantalones">Pantalones</Link>
+              <Link to="/mujer/chaquetas">Chaquetas</Link>
+              <Link to="/mujer/zapatos">Zapatos</Link>
+            </div>
+          </div>
+
+          {/* ACCESORIOS */}
+          <div className="nav-item">
+            <Link to="/categoria/accesorios">Accesorios</Link>
+
+            <div className="dropdown">
+              <Link to="/accesorios/mochilas">Mochilas</Link>
+              <Link to="/accesorios/gorras">Gorras</Link>
+              <Link to="/accesorios/otros">Accesorios</Link>
+            </div>
+          </div>
+
         </div>
       </div>
 
-    
       <div className="nav-right">
         <Link to="/login">Login</Link>
         <Link to="/cart">🛒</Link>
@@ -46,6 +78,7 @@ function Nav() {
           </button>
         </form>
       </div>
+
     </nav>
   );
 }

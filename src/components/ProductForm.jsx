@@ -2,9 +2,20 @@ import { useState } from "react";
 
 function ProductForm({ onSubmit }) {
 
-  const categorias = ["ropa", "zapatillas", "accesorios"];
-  const tallas = ["S", "M", "L", "XL"];
-  const preciosBase = [10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100, 125, 150, 175, 200];
+  // categoria del NAV
+  const categorias = ["hombre", "mujer", "accesorios"];
+
+  // subcategorias
+  const subcategorias = [
+    "camisetas",
+    "pantalones",
+    "chaquetas",
+    "zapatos",
+    "mochilas",
+    "gorras"
+  ];
+
+  const tallas = ["XS", "S", "M", "L", "XL"];
 
   const [product, setProduct] = useState({
     nombre: "",
@@ -12,6 +23,7 @@ function ProductForm({ onSubmit }) {
     descripcion: "",
     imagen: null,
     categoria: "",
+    subcategoria: "",
     talla: ""
   });
 
@@ -35,35 +47,26 @@ function ProductForm({ onSubmit }) {
       <input
         type="text"
         name="nombre"
-        placeholder="Nombre"
+        placeholder="Nombre del producto"
         onChange={handleChange}
+        required
       />
-      <select name="precio" onChange={handleChange}>
-        <option value="">Selecciona un precio base</option>
-        {preciosBase.map(p => (
-          <option key={p} value={p}>
-            {p} €
-          </option>
-        ))}
-      </select>
 
-      <input
-        type="number"
-        name="precio"
-        placeholder="O escribe el precio"
-        onChange={handleChange}
-      />
       <textarea
         name="descripcion"
         placeholder="Descripción"
         onChange={handleChange}
+        required
       />
+
       <input
         type="file"
         name="imagen"
         onChange={handleChange}
       />
-      <select name="categoria" onChange={handleChange}>
+
+    
+      <select name="categoria" onChange={handleChange} required>
         <option value="">Selecciona categoría</option>
         {categorias.map(cat => (
           <option key={cat} value={cat}>
@@ -71,6 +74,16 @@ function ProductForm({ onSubmit }) {
           </option>
         ))}
       </select>
+
+      <select name="subcategoria" onChange={handleChange} required>
+        <option value="">Selecciona subcategoría</option>
+        {subcategorias.map(sub => (
+          <option key={sub} value={sub}>
+            {sub}
+          </option>
+        ))}
+      </select>
+
       <select name="talla" onChange={handleChange}>
         <option value="">Selecciona talla</option>
         {tallas.map(t => (
@@ -78,12 +91,17 @@ function ProductForm({ onSubmit }) {
             {t}
           </option>
         ))}
-      </select>
+   </select> 
+      <input
+        type="number"
+        name="precio"
+        placeholder="Precio (€)"
+        onChange={handleChange}
+        required
+      />
 
       <button type="submit">Crear producto</button>
-      
     </form>
-    
   );
 }
 

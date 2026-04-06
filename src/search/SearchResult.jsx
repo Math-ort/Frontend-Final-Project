@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { ProductContext } from "../context/ProductContext";
-import  Products  from "../components/Products"
+import  Product  from "../components/Products"
 
 function SearchResults() {
   const { products, setSearch } = useContext(ProductContext);
