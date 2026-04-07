@@ -32,14 +32,16 @@ function RouterApp() {
         <Route path="/categoria/pantalones" element={<h1>Pantalones</h1>} />
         <Route path="/categoria/camisetas" element={<h1>Camisetas</h1>} />
         <Route path="/cart" element={<Cart cart={cart}setCart={setCart}/>} />
-        <Route path="/products/create" element={<CreateProduct />} />
         <Route path="/search/:query" element={<SearchResults />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup  />} />
+        <Route path="/products/create" element={<CreateProduct />} />
 
 
         {/* rutas protegidas */}
+        <Route element={<ProtectedRoute />}>
+        </Route>
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup  />} />
         <Route path="/auth/dashboaradmin" element={<DashboardAdmin />} />
 
         <Route path="/*" element={<Navigate to="/"/>} />

@@ -8,7 +8,7 @@ function Products({cart, setCart}) {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setProducts(data.data); // mi api es un objeto
+        setProducts(data.data); 
         console.log(products);
       })
       .catch((error) => console.error(error));

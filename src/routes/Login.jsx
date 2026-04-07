@@ -41,8 +41,17 @@ export default function Login() {
     };
 
     if (auth.isAuthenticated) {
+    
         return <Navigate to="/dashboard" />;
     }
+ 
+    return (
+        <DefaultLayout>
+            <form onSubmit={handleSubmit}>
+                ...
+            </form>
+        </DefaultLayout>
+    );
 
     return (
         <DefaultLayout>

@@ -7,14 +7,14 @@ export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [loading, setLoading] = useState(true);
 
-    // maantener sesion al recargar
+    // mantener sesion al recargar
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
 
         if (storedUser) {
             const parsedUser = JSON.parse(storedUser);
             setUser(parsedUser);
-            setIsAuthenticated(true);
+            setIsAuthenticated("false");
         }
 
         setLoading(false);
