@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Nav from "../pages/Nav"
 import SearchResults from "../search/SearchResult";
 import { useContext } from "react";
-import  CreateProduct  from "../pages/CreateProduct"
 import  Home from "../pages/Home"
 import { ProductContext } from "../context/ProductContext";
 import Dashboard from "../components/Dashboard";
 import Footer from "../components/Footer";
+import CreateProduct from "../pages/CreateProduct";
 import Cart from "../pages/Cart";
 import { useState } from "react";
 import DashboardAdmin from "./DashboardAdmin";
@@ -35,7 +35,7 @@ function RouterApp() {
         <Route path="/search/:query" element={<SearchResults />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup  />} />
-        <Route path="/products/create" element={<CreateProduct />} />
+        //<Route path="/products/create" element={< CreateProduct />} />
 
 
         {/* rutas protegidas */}
