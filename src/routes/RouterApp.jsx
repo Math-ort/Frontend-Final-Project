@@ -43,8 +43,8 @@ function RouterApp() {
     <Router>
       <Nav />
       <Routes>
-        <Route path="/" element={<Dashboard />}  />
         <Route element={<ProtectedRoute />}>
+        <Route path="/" element={<Dashboard />}  />
           <Route path="/products" element={<Home addToCart={addToCart} />}  />
         </Route>
 
