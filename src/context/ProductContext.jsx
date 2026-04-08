@@ -5,9 +5,9 @@ export const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
-
+  const Api= import.meta.env.VITE_API_URL
   useEffect(() => {
-    fetch("http://localhost:4000/api/products")
+    fetch(Api)
       .then((res) => res.json())
       .then((data) => setProducts(data.data))
       .catch((error) => console.error(error));

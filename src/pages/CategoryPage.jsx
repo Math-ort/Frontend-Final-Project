@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 function CategoryPage() {
   const { categoria, subcategoria } = useParams();
   const [products, setProducts] = useState([]);
+  const Api= import.meta.env.VITE_API_URL
 
   useEffect(() => {
-    let url = `http://localhost:4000/api/products?categoria=${categoria}`;
+    let url = `${Api}?categoria=${categoria}`;
     if (subcategoria) url += `&subcategoria=${subcategoria}`;
-  
+  console.log(url);
     fetch(url)
       .then(res => res.json())      
       .then(result => {
@@ -28,6 +29,9 @@ function CategoryPage() {
         <h3>{p.nombre}</h3>
         <p>{p.categoria}</p>
         <p>{p.precio}€</p>
+        <button onClick={() => addToCart(p)}>
+          Añadir al carrito
+        </button>
       </div>
     
     ))

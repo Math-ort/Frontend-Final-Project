@@ -26,7 +26,7 @@ function RouterApp() {
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
 
-        <Route path="/:categoria" element={<CategoryPage />} />
+        <Route path="/:categoria" element={<CategoryPage cart={cart} setCart={setCart}/>} />
         <Route path="/:categoria/:subcategoria" element={<CategoryPage />} />
 
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
