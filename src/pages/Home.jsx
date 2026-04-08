@@ -6,6 +6,7 @@ function Home({cart, setCart}) {
       <h1>Home</h1>
       <Products cart={cart}setCart={setCart} />
     </div>
+  
   );
 }
 

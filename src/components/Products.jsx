@@ -16,8 +16,6 @@ function Products({cart, setCart}) {
 
   return (
     <div className="products-container">
-      <h2>Productos:</h2>
-      
       {products.map((product) => (
         <div className="product-card" key={product._id}>
           <p>{product.nombre}</p>

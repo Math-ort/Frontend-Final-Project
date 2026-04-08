@@ -52,7 +52,7 @@ const productsSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Product', productsSchema);
-module.exports.validCategorias = validCategorias;
-module.exports.validTallas = validTallas;
+module.exports.categorias = categorias;
+module.exports.subcategorias = subcategorias;
 
 

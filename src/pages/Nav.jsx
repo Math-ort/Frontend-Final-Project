@@ -26,7 +26,8 @@ function Nav() {
 
           {/* HOMBRE */}
           <div className="nav-item">
-            <Link to="/hombre">Hombre</Link>
+          <Link to="/categoria/hombre">Hombre</Link>
+
 
             <div className="dropdown">
               <Link to="/hombre/camisetas">Camisetas</Link>
@@ -41,7 +42,7 @@ function Nav() {
             <Link to="/mujer">Mujer</Link>
 
             <div className="dropdown">
-              <Link to="/mujer/camisetas">Camisetas</Link>
+              <Link to="/categoria/mujer/camisetas">Camisetas</Link>
               <Link to="/mujer/pantalones">Pantalones</Link>
               <Link to="/mujer/chaquetas">Chaquetas</Link>
               <Link to="/mujer/zapatos">Zapatos</Link>

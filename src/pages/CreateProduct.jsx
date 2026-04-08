@@ -9,8 +9,8 @@ function CreateProduct() {
           formData.append("nombre", product.nombre);
           formData.append("descripcion", product.descripcion);
           formData.append("precio", product.precio);
-          formData.append("categoria", product.categoria);
-          formData.append("subcategoria", product.subcategoria);
+          formData.append("categoria", product.categoria.toLowerCase);
+          formData.append("subcategoria", product.subcategoria.toLowerCase);
           formData.append("talla", product.talla);
       
           if (product.imagen) {
