@@ -44,15 +44,6 @@ export default function Login() {
     
         return <Navigate to="/dashboard" />;
     }
- 
-    return (
-        <DefaultLayout>
-            <form onSubmit={handleSubmit}>
-                ...
-            </form>
-        </DefaultLayout>
-    );
-
     return (
         <DefaultLayout>
             <form className="form" onSubmit={handleSubmit}>

@@ -1,18 +1,73 @@
-# React + Vite
+Full Stack App – Tienda de Ropa 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicacion full stack de una tienda de ropa con catalogo de productos.
+Incluye un frontend en React y un backend con Node.js + Express, conectado a MongoDB Atlas.
 
-Currently, two official plugins are available:
+* Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Frontend
+React
+Vite
+React Router DOM
+Axios
+* Backend
+Node.js
+Express
+MongoDB + Mongoose
+JWT (autenticación)
+Cloudinary (gestión de imágenes)
+Multer (subida de archivos)
 
-## React Compiler
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+⚙️ Instalación
+1️⃣ Clonar el repositorio
+git clone <tu-repo>
+cd Final\ Project
+2️⃣ Instalar dependencias
+Frontend
+cd Frontend
+npm install
+Backend
+cd ../Backend-Final-Project
+npm install
+Variables de entorno
+Backend (.env)
 
-Note: This will impact Vite dev & build performances.
+Ejemplo:
 
-## Expanding the ESLint configuration
+PORT=3000
+MONGO_URI=tu_uri_de_mongodb
+JWT_SECRET=tu_secreto
+CLOUDINARY_CLOUD_NAME=xxx
+CLOUDINARY_API_KEY=xxx
+CLOUDINARY_API_SECRET=xxx
+Frontend (.env)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+* Funcionalidades principales
+
+ Productos
+Listado de productos
+Creación de productos (Route path="/products/create")
+Subida de imágenes con Cloudinary
+Gestión de productos
+Control del catálogo
+
+
+* Scripts disponibles
+Frontend
+npm run dev      # servidor desarrollo
+npm run build    # build producción
+npm run preview  # preview build
+npm run lint     # linting
+Backend
+npm start        # iniciar servidor
+npm test         # tests con Jest
+
+Las imágenes se gestionan con:
+
+Cloudinary
+Multer + almacenamiento en cloud
+
+* Notas
+Footer ficticio

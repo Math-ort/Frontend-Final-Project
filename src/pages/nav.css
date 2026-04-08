@@ -68,10 +68,6 @@
     transform: translateY(0);
   }
   
-  /* =========================
-     LINKS DEL DROPDOWN
-  ========================= */
-  
   .dropdown a {
     color: #111;
     font-size: 16px;
@@ -97,20 +93,13 @@
   .dropdown a:hover::after {
     width: 100%;
   }
-  
-  /* =========================
-     DROPDOWN SIMPLE (ACCESORIOS)
-  ========================= */
-  
+
   .dropdown.simple {
     flex-direction: column;
     gap: 10px;
   }
   
-  /* =========================
-     RIGHT SIDE NAV
-  ========================= */
-  
+
   .nav-right {
     display: flex;
     align-items: center;
@@ -141,4 +130,21 @@
   body {
     margin: 0;
     padding: 0;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+    .nav-center svg,
+    .nav-center img {
+    width: 55px;
+    height: 50px;
   }

@@ -3,17 +3,16 @@ import '../App.css';
 
 function Products({cart, setCart}) {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    fetch("http://localhost:4000/api/products")
+    fetch(import.meta.env.VITE_API_URL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data.data);
         setProducts(data.data); 
-        console.log(products);
       })
       .catch((error) => console.error(error));
   }, []);
-
   return (
     <div className="products-container">
       {products.map((product) => (

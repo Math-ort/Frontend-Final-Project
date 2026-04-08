@@ -12,7 +12,7 @@ function CreateProduct() {
           formData.append("categoria", product.categoria.toLowerCase());
           formData.append("subcategoria", product.subcategoria.toLowerCase());
           formData.append("talla", product.talla);
-      
+
           if (product.imagen) {
             formData.append("imagen", product.imagen);
           }

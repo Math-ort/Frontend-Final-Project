@@ -2,6 +2,7 @@ import "./nav.css";
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchIcon from '../components/SearchIcon';
+import DashboardIcon from "../components/DashboardIcon";
 function Nav() {
   const [searchInput, setSearchInput] = useState("");
   const navigate = useNavigate();
@@ -20,13 +21,13 @@ function Nav() {
     <nav className="nav">
 
       <div className="nav-left">
-        <Link to="/" className="logo">Shop</Link>
+        <Link to="/products" className="logo">Shop</Link>
 
         <div className="nav-links">
 
           {/* HOMBRE */}
           <div className="nav-item">
-          <Link to="/categoria/hombre">Hombre</Link>
+          <Link to="/hombre">Hombre</Link>
 
 
             <div className="dropdown">
@@ -51,7 +52,7 @@ function Nav() {
 
           {/* ACCESORIOS */}
           <div className="nav-item">
-            <Link to="/categoria/accesorios">Accesorios</Link>
+            <Link to="/accesorios">Accesorios</Link>
 
             <div className="dropdown">
               <Link to="/accesorios/mochilas">Mochilas</Link>
@@ -62,6 +63,11 @@ function Nav() {
 
         </div>
       </div>
+        <div>
+        <Link to="/" className="nav-center">
+          <DashboardIcon />
+        </Link>
+        </div>
 
       <div className="nav-right">
         <Link to="/login">Login</Link>

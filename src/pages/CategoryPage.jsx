@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-function CategoryPage() {
+function CategoryPage({addToCart}) {
   const { categoria, subcategoria } = useParams();
   const [products, setProducts] = useState([]);
   const Api= import.meta.env.VITE_API_URL
@@ -9,7 +9,6 @@ function CategoryPage() {
   useEffect(() => {
     let url = `${Api}?categoria=${categoria}`;
     if (subcategoria) url += `&subcategoria=${subcategoria}`;
-  console.log(url);
     fetch(url)
       .then(res => res.json())      
       .then(result => {

@@ -9,9 +9,10 @@ const subcategorias = [
   "chaquetas",
   "zapatos",
   "mochilas",
-  "gorras"
-];
+  "gorras",
+  "accesorios"
 
+];
 const productsSchema = new mongoose.Schema({
   nombre: {
     type: String,

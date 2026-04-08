@@ -71,7 +71,7 @@ export default function Dashboard() {
                     className="shop-btn"
                     onClick={(e) => {
                       e.stopPropagation();
-                      navigate("/home");
+                      navigate("/products");
                     }}
                   >
                     Shop Now

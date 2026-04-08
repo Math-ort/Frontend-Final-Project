@@ -1,4 +1,4 @@
-const Product = require('../../models/Products');
+const Product = require('../../models/Products')
 const productApiController = {
 
  // GET /api/products
@@ -6,8 +6,6 @@ getAllProducts: async (req, res) => {
   try {
      const products = await Product.find();
     res.json({
-      ok: true,
-      total: products.length,
       data: products
     });
   } catch (error) {
