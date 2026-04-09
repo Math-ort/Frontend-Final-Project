@@ -43,10 +43,8 @@ function RouterApp() {
     <Router>
       <Nav />
       <Routes>
-        <Route element={<ProtectedRoute />}>
         <Route path="/" element={<Dashboard />}  />
           <Route path="/products" element={<Home addToCart={addToCart} />}  />
-        </Route>
 
         <Route path="/:categoria" element={<CategoryPage addToCart={addToCart}/>} />
         <Route path="/:categoria/:subcategoria" element={<CategoryPage addToCart={addToCart}/>} />
@@ -54,7 +52,9 @@ function RouterApp() {
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
         <Route path="/products/create" element={<CreateProduct />} />
         <Route path="/search/:query" element={<SearchResults />} />
+        <Route element={<ProtectedRoute />}>
         <Route path="/login" element={<Login />} />
+        </Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
